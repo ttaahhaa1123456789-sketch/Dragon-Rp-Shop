@@ -1,4 +1,3 @@
-# Dragon--Role-Play
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -14,6 +13,7 @@
   font-family:tahoma;
   scroll-behavior:smooth;
 }
+
 body {
   color: #fff;
   background:
@@ -22,7 +22,6 @@ body {
     linear-gradient(135deg, #0b0602, #140900, #0b0602);
   background-attachment: fixed;
   overflow-x: hidden;
-}
 }
 
 /* ===== Preloader ===== */
@@ -60,14 +59,12 @@ body {
   align-items:center;
   padding:10px 20px;
   background: rgba(255,255,255,0.95);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   z-index:1000;
   border-radius: 0 0 15px 15px;
 }
 
-/* Hamburger Menu */
 .menu-toggle{
-  display:flex;
+  display:none;
   flex-direction:column;
   gap:5px;
   cursor:pointer;
@@ -78,15 +75,12 @@ body {
   height:4px;
   background:#1E90FF;
   border-radius:2px;
-  transition:0.3s;
 }
 
-/* Navbar Links */
 .navbar ul{
   display:flex;
   gap:20px;
   list-style:none;
-  transition:0.3s;
 }
 
 .navbar a{
@@ -95,8 +89,7 @@ body {
   font-weight:bold;
   padding:8px 15px;
   border-radius:8px;
-  transition:0.3s;
-  position:relative;
+  transition:.3s;
 }
 
 .navbar a:hover{
@@ -104,17 +97,19 @@ body {
   color:white;
 }
 
-/* For Mobile Menu */
-.navbar ul.show{
-  display:flex;
-  flex-direction:column;
-  background: rgba(255,255,255,0.95);
-  position:absolute;
-  top:50px;
-  right:20px;
-  padding:10px 20px;
-  border-radius:8px;
-  box-shadow:0 0 15px rgba(0,0,0,0.2);
+@media(max-width:900px){
+  .menu-toggle{display:flex;}
+  .navbar ul{
+    display:none;
+    flex-direction:column;
+    background: rgba(255,255,255,0.95);
+    position:absolute;
+    top:60px;
+    right:20px;
+    padding:10px 20px;
+    border-radius:8px;
+  }
+  .navbar ul.show{display:flex;}
 }
 
 /* ===== Hero ===== */
@@ -125,14 +120,7 @@ body {
   justify-content:center;
   align-items:center;
   text-align:center;
-  background:
-    radial-gradient(circle at top, rgba(255,140,0,0.35), transparent 45%),
-    radial-gradient(circle at bottom, rgba(255,90,0,0.25), transparent 45%),
-    linear-gradient(135deg, #0b0602, #140900, #0b0602);
-  border-radius: 15px;
-  padding: 0 20px;
-  backdrop-filter: blur(6px);
-} 
+}
 
 .logo{
   color:#0effff;
@@ -146,32 +134,16 @@ body {
   padding:15px 35px;
   background:#1E90FF;
   color:white;
-  text-decoration:none;
   border-radius:15px;
   font-weight:bold;
   font-size:18px;
-  box-shadow:0 0 20px #1E90FF, 0 0 40px #00BFFF;
-  transition:0.3s;
-}
-
-.btn:hover{
-  background:#00BFFF;
-  box-shadow:0 0 30px #1E90FF, 0 0 60px #00BFFF;
-  transform:scale(1.05);
-}
-
-.players{
-  margin-top:20px;
-  font-size:20px;
-  color:#555;
+  box-shadow:0 0 20px #1E90FF;
 }
 
 /* ===== Sections ===== */
 .section{
   padding:80px 20px;
   text-align:center;
-  border-radius: 15px;
-  margin:20px auto;
 }
 
 /* ===== Cards ===== */
@@ -187,79 +159,39 @@ body {
   padding:25px;
   border-radius:10px;
   width:250px;
-  color:white;
   font-weight:bold;
-  transition:0.3s;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-.card.owner{background:#af2d00;}      /* نارنجی قرمز */
-.card.scripter{background:#af2d00;}   /* سبز */
+.card.owner{background:#af2d00;}
+.card.scripter{background:#af2d00;}
 
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 25px rgba(0,0,0,0.2);
-}
-
-/* ===== Gallery Section ===== */
-#gallery {
-  padding:60px 20px;
-  text-align:center;
-}
-
+/* ===== Gallery ===== */
 .gallery-scroll{
   display:flex;
   overflow-x:auto;
   gap:20px;
   padding:20px 0;
-  scroll-behavior: smooth;
 }
 
 .gallery-card{
-  flex: 0 0 auto;
-  background: rgba(255,255,255,0.2);
-  padding:10px;
+  width:300px;
   border-radius:12px;
   overflow:hidden;
-  transition:0.3s;
-  width:300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow:0 0 15px rgba(0,0,0,.3);
 }
 
-.gallery-card img{
-  width:100%;
-  height:auto;
-  border-radius:10px;
-  transition:0.3s;
-}
+.gallery-card img{width:100%;}
 
-.gallery-card:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px rgba(0,0,0,0.2);
-}
-
-/* ===== Server IP Section ===== */
+/* ===== Server IP ===== */
 #server-ip{
-  padding:60px 20px;
-  text-align:center;
-  background:#ffb296;
-  border-radius:15px;
-  margin:40px 0;
+  padding:25px 40px;
+  background:rgba(255,140,0,.15);
+  border-radius:18px;
+  display:inline-block;
+  box-shadow:0 0 20px rgba(255,140,0,.7);
 }
 
-#server-ip h2{
-  color:#1E90FF;
-}
-
-#server-ip span{
-  display:block;
-  font-size:22px;
-  margin-top:15px;
-  color:#32CD32;
-  font-weight:bold;
-}
-
-/* Footer */
 footer{
   background:#FFD580;
   padding:20px;
@@ -267,71 +199,9 @@ footer{
   font-weight:bold;
   color:#1E90FF;
 }
-
-/* Responsive */
-@media(max-width:768px){
-  .cards{
-    flex-direction:column;
-    align-items:center;
-  }
-  .gallery-card{
-    width:80%;
-  }
-}
-<style>
-/* کلی استایل‌های قبلی سایتت اینجاست */
-
-/* ===== Neon Effects ===== */
-.neon {
-  box-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 40px #00f;
-}
-
-/* دکمه‌ها */
-.btn, button {
-  background: linear-gradient(90deg,#00f,#0ff,#00f);
-  box-shadow: 0 0 10px #00f, 0 0 20px #0ff, 0 0 40px #00f;
-  animation: glow 1.5s infinite alternate;
-}
-
-@keyframes glow {
-  from { box-shadow: 0 0 5px #00f, 0 0 15px #0ff; }
-  to   { box-shadow: 0 0 15px #0ff, 0 0 35px #00f; }
-}
-
-/* لینک‌های منو */
-.navbar a {
-  box-shadow: 0 0 5px #1E90FF, 0 0 15px #00BFFF;
-}
-
-.navbar a:hover {
-  box-shadow: 0 0 15px #00BFFF, 0 0 40px #1E90FF;
-}
-
-/* کارت‌ها */
-.card {
-  box-shadow: 0 0 15px rgba(0,255,255,0.4);
-}
-
-.card:hover {
-  box-shadow: 0 0 25px #00ffff, 0 0 50px #1E90FF;
-}
-
-/* همبرگری */
-.menu-toggle div {
-  box-shadow: 0 0 10px #1E90FF, 0 0 20px #00BFFF;
-}
-
-/* گالری */
-.gallery-card {
-  box-shadow: 0 0 10px #1E90FF, 0 0 25px #00BFFF;
-}
-
-.gallery-card:hover {
-  box-shadow: 0 0 25px #00ffff, 0 0 60px #1E90FF;
-}
-</style>
 </style>
 </head>
+
 <body>
 
 <div id="preloader">
@@ -340,9 +210,7 @@ footer{
 
 <nav class="navbar">
   <div class="menu-toggle" id="menu-toggle">
-    <div></div>
-    <div></div>
-    <div></div>
+    <div></div><div></div><div></div>
   </div>
   <ul id="nav-links">
     <li><a href="#home">خانه</a></li>
@@ -351,14 +219,14 @@ footer{
     <li><a href="#gallery">گالری</a></li>
     <li><a href="#server-ip">IP سرور</a></li>
     <li><a href="https://ttaahhaa1123456789-sketch.github.io/Dragon-Rp-Shop/" target="_blank">شاپ</a></li>
-<<li><a href="https://ttaahhaa1123456789-sketch.github.io/Froum-DragonRp/" target="_blank">انجمن</a></li>
+    <li><a href="https://ttaahhaa1123456789-sketch.github.io/Froum-DragonRp/" target="_blank">انجمن</a></li>
+  </ul>
 </nav>
 
 <section id="home" class="hero">
   <h1 class="logo">DRAGON ROLEPLAY</h1>
   <h2><span id="typing"></span></h2>
   <a href="mp://127.0.0.1:7777" class="btn">🎮 Connect To Server</a>
-  <div class="players">👥 Players Online: <span id="playerCount">10</span></div>
 </section>
 
 <section id="features" class="section">
@@ -382,153 +250,39 @@ footer{
 <section id="gallery" class="section">
   <h2>گالری سرور</h2>
   <div class="gallery-scroll">
-    <div class="gallery-card"><img src="https://via.placeholder.com/400x250.png?text=Server+Image+1" alt=""></div>
-    <div class="gallery-card"><img src="https://via.placeholder.com/400x250.png?text=Server+Image+2" alt=""></div>
-    <div class="gallery-card"><img src="https://via.placeholder.com/400x250.png?text=Server+Image+3" alt=""></div>
-    <div class="gallery-card"><img src="https://via.placeholder.com/400x250.png?text=Server+Image+4" alt=""></div>
+    <div class="gallery-card"><img src="https://via.placeholder.com/400x250"></div>
+    <div class="gallery-card"><img src="https://via.placeholder.com/400x250"></div>
+    <div class="gallery-card"><img src="https://via.placeholder.com/400x250"></div>
   </div>
 </section>
 
+<center>
 <section id="server-ip">
   <h2>IP سرور</h2>
-  <span>-- فعلاً خالی --</span>
+  <span>127.0.0.1:7777</span>
 </section>
-<section id="download" class="section">
-  <h2>دانلود SA-MP</h2>
+</center>
 
-  <div class="cards">
-    <div class="card" style="background:#00BCD4;text-align:center;">
-      
-      <div style="font-size:18px;margin-bottom:15px;">
-        🎮 دانلود سمپ برای ورود به سرور
-      </div>
-
-      <a href="https://uploadkon.ir/uploads/332316_26SA-MP.zip"
-         target="_blank"
-         style="
-           display:inline-block;
-           padding:14px 30px;
-           background:#1E90FF;
-           color:white;
-           text-decoration:none;
-           border-radius:14px;
-           font-size:17px;
-           font-weight:bold;
-           box-shadow:0 0 15px #1E90FF,0 0 30px #00BFFF;
-           transition:0.3s;
-         "
-         onmouseover="this.style.transform='scale(1.05)'"
-         onmouseout="this.style.transform='scale(1)'"
-      >
-        ⬇ دانلود مستقیم SA-MP
-      </a>
-
-    </div>
-  </div>
-</section>
 <footer>
- 
-  Tavsot Tim Dragon Rp
-  کانال ما: @DraGon_RolePlay
-  سازنده: @Mashin_Mazndarn
+  Tavsot Tim Dragon Rp | @DraGon_RolePlay | @Mashin_Mazndarn
 </footer>
 
 <script>
-// Preloader
-window.addEventListener("load", function(){
-  document.getElementById("preloader").style.display = "none";
-});
+window.addEventListener("load",()=>{document.getElementById("preloader").style.display="none"});
 
-// Typing Effect
-const text = "به بهترین سرور،دراگون رول پلی خوش آمدید" 
-let i = 0;
-function typing(){
-  if(i < text.length){
-    document.getElementById("typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typing, 60);
+const menuToggle=document.getElementById('menu-toggle');
+const navLinks=document.getElementById('nav-links');
+menuToggle.onclick=()=>navLinks.classList.toggle('show');
+
+const text="به بهترین سرور،دراگون رول پلی خوش آمدید";
+let i=0;
+(function typing(){
+  if(i<text.length){
+    document.getElementById("typing").innerHTML+=text.charAt(i++);
+    setTimeout(typing,60);
   }
-}
-typing();
-
-// Hamburger Menu Toggle
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-// ===== Auto Scroll Gallery =====
-const gallery = document.querySelector('.gallery-scroll');
-
-let scrollAmount = 0;
-
-setInterval(() => {
-  scrollAmount += 320; // عرض هر عکس + فاصله
-  if (scrollAmount >= gallery.scrollWidth - gallery.clientWidth) {
-    scrollAmount = 0;
-  }
-  
-  gallery.scrollTo({
-    left: scrollAmount,
-    behavior: "smooth"
-  });
-  
-}, 5000); // هر 4 ثانیه
+})();
 </script>
-<!-- Music Player -->
-<div id="music-player">
-  <button id="music-btn">🔊</button>
-</div>
 
-<audio id="bg-music" autoplay loop>
-  <source src="https://uploadkon.ir/uploads/898c16_26Unknown-artist-GTA-Songs-320-.mp3" type="audio/mpeg">
-</audio>
-
-<style>
-#music-player{
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  z-index:9999;
-}
-
-#music-btn{
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  border:none;
-  background:linear-gradient(135deg,#ff9800,#ff5722);
-  color:white;
-  font-size:22px;
-  box-shadow:0 0 15px #ff9800, 0 0 30px #ff5722;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-#music-btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 25px #ff9800, 0 0 50px #ff5722;
-}
-</style>
-
-<script>
-const music = document.getElementById("bg-music");
-const btn = document.getElementById("music-btn");
-
-btn.addEventListener("click", () => {
-  if(music.paused){
-    music.play();
-    btn.innerHTML = "🔊";
-  } else {
-    music.pause();
-    btn.innerHTML = "🔇";
-  }
-});
-
-// autoplay fix for mobile
-document.body.addEventListener("click", () => {
-  music.play();
-},{ once:true });
-</script>
 </body>
 </html>
